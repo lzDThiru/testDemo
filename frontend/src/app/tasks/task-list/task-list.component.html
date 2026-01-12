@@ -1,0 +1,10 @@
+<h1>Task List</h1>
+<h2 *ngIf="tasks.length === 0">No tasks available</h2>
+<ul class="task-list" *ngIf="tasks.length > 0">
+  <li *ngFor="let task of tasks">
+    {{ task.title }} - {{ task.description }} 
+    <button (click)="editTask(task)">Edit</button>
+    <button (click)="deleteTask(task.id)">Delete</button>
+    
+  </li>
+</ul>
